@@ -3,8 +3,6 @@ FROM ubuntu:14.04
 # Idea from http://nathanleclaire.com/blog/2014/07/12/10-docker-tips-and-tricks-that-will-make-you-sing-a-whale-song-of-joy/
 
 RUN echo 'debconf debconf/frontend select Noninteractive' | debconf-set-selections
-RUN apt-get update -y
-RUN apt-get dist-upgrade -y
 RUN apt-get install vim -y
 RUN apt-get install git -y
 RUN apt-get install curl -y
@@ -36,4 +34,4 @@ RUN echo dev ALL = NOPASSWD : ALL > /etc/sudoers.d/dev
 
 USER dev
 
-CMD [ "/bin/bash" ]
+CMD [ "/bin/bash", "-l" ]
