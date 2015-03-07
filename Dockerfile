@@ -5,8 +5,8 @@ FROM ubuntu:14.04
 RUN echo 'debconf debconf/frontend select Noninteractive' | debconf-set-selections
 RUN apt-get install vim -y
 RUN apt-get install git -y
+RUN apt-get install subversion -y
 RUN apt-get install curl -y
-
 RUN curl -sSL https://get.docker.com/ubuntu/ | sh
 
 RUN useradd dev
