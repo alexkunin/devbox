@@ -19,10 +19,7 @@ VOLUME /var/shared
 RUN mkdir /home/dev
 WORKDIR /home/dev
 ENV HOME /home/dev
-ADD vimrc /home/dev/.vimrc
-ADD vim /home/dev/.vim
-ADD bash_profile /home/dev/.bash_profile
-ADD gitconfig /home/dev/.gitconfig
+ADD . /home/dev/
 
 RUN ln -s /var/shared/.ssh
 RUN ln -s /var/shared/.bash_history
