@@ -1,0 +1,27 @@
+#!/bin/bash
+
+DEFAULT_NAME=devbox
+
+case $1 in
+    "")
+        echo "Usage: $0 COMMAND [arg...]"
+        echo "Commands:"
+        echo "    new [name]    spawn new box, name defaults to $DEFAULT_NAME"
+        ;;
+
+    new)
+        docker run \
+            -i \
+            -t \
+            -e TERM=xterm-256color \
+            --hostname=${2:-$DEFAULT_NAME} \
+            -v /var/run/docker.sock:/var/run/docker.sock \
+            --rm \
+            alexkunin/devbox
+        ;;
+
+    *)
+        echo "$0: invalid command \"$1\"" >&2
+        exit 1
+        ;;
+esac
