@@ -7,6 +7,7 @@ RUN apt-get install vim -y
 RUN apt-get install git -y
 RUN apt-get install subversion -y
 RUN apt-get install curl -y
+RUN apt-get install php5-cli -y
 RUN apt-get install man -y
 RUN curl -sSL https://get.docker.com/ubuntu/ | sh
 
