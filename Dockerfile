@@ -16,6 +16,9 @@ RUN touch /var/shared/placeholder
 WORKDIR /root
 ADD . /root
 
+RUN curl -L https://github.com/docker/compose/releases/download/1.1.0/docker-compose-`uname -s`-`uname -m` > /root/bin/docker-compose
+RUN chmod +x /root/bin/docker-compose
+
 RUN ln -s /var/shared/.ssh
 RUN ln -s /var/shared/.bash_history
 RUN ln -s /var/shared/.maintainercfg
