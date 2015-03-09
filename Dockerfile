@@ -10,17 +10,10 @@ RUN apt-get install curl -y
 RUN apt-get install man -y
 RUN curl -sSL https://get.docker.com/ubuntu/ | sh
 
-RUN mkdir /var/shared/
-RUN touch /var/shared/placeholder
-
 WORKDIR /root
 ADD . /root
 
-RUN curl -L https://github.com/docker/compose/releases/download/1.1.0/docker-compose-`uname -s`-`uname -m` > /root/bin/docker-compose
-RUN chmod +x /root/bin/docker-compose
-
-RUN ln -s /var/shared/.ssh
-RUN ln -s /var/shared/.bash_history
-RUN ln -s /var/shared/.maintainercfg
+RUN curl -L https://github.com/docker/compose/releases/download/1.1.0/docker-compose-`uname -s`-`uname -m` > /usr/local/bin/docker-compose
+RUN chmod +x /usr/local/bin/docker-compose
 
 CMD [ "/bin/bash", "-l" ]
