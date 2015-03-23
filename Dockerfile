@@ -1,5 +1,7 @@
 FROM ubuntu:14.04
 
+RUN apt-get update
+
 # Idea from http://nathanleclaire.com/blog/2014/07/12/10-docker-tips-and-tricks-that-will-make-you-sing-a-whale-song-of-joy/
 
 RUN echo 'debconf debconf/frontend select Noninteractive' | debconf-set-selections
