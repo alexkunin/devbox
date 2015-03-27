@@ -10,6 +10,7 @@ RUN apt-get install git -y
 RUN apt-get install subversion -y
 RUN apt-get install curl -y
 RUN apt-get install php5-cli -y
+RUN apt-get install php5-sqlite -y
 RUN apt-get install man -y
 RUN apt-get install python3-pip -y
 RUN curl -sSL https://get.docker.com/ubuntu/ | sh
@@ -19,5 +20,10 @@ ADD . /root
 
 RUN curl -L https://github.com/docker/compose/releases/download/1.1.0/docker-compose-`uname -s`-`uname -m` > /usr/local/bin/docker-compose
 RUN chmod +x /usr/local/bin/docker-compose
+
+RUN curl http://psysh.org/psysh > /usr/local/bin/psysh
+RUN chmod +x /usr/local/bin/psysh
+RUN mkdir -p /root/.local/share/psysh
+RUN curl http://psysh.org/manual/en/php_manual.sqlite > /root/.local/share/psysh/php_manual.sqlite
 
 CMD [ "/bin/bash", "-l" ]
