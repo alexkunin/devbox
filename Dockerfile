@@ -13,6 +13,7 @@ RUN apt-get install php5-cli -y
 RUN apt-get install php5-sqlite -y
 RUN apt-get install man -y
 RUN apt-get install python3-pip -y
+RUN apt-get install zip -y
 RUN curl -sSL https://get.docker.com/ubuntu/ | sh
 
 WORKDIR /root
