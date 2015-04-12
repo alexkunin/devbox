@@ -27,4 +27,8 @@ RUN chmod +x /usr/local/bin/psysh
 RUN mkdir -p /root/.local/share/psysh
 RUN curl http://psysh.org/manual/en/php_manual.sqlite > /root/.local/share/psysh/php_manual.sqlite
 
+RUN curl -sL https://deb.nodesource.com/setup | sudo bash -
+RUN apt-get install -y nodejs
+RUN apt-get install -y build-essential
+
 CMD [ "/bin/bash", "-l" ]
