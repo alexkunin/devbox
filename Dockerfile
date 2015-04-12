@@ -33,4 +33,6 @@ RUN apt-get install -y build-essential
 
 RUN apt-get install -y wget
 
+RUN apt-get install -y tree
+
 CMD [ "/bin/bash", "-l" ]
