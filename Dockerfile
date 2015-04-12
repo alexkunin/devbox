@@ -35,4 +35,6 @@ RUN apt-get install -y wget
 
 RUN apt-get install -y tree
 
+RUN curl -sS https://getcomposer.org/installer | php -- --filename=composer --install-dir=/usr/local/bin
+
 CMD [ "/bin/bash", "-l" ]
